@@ -6,9 +6,12 @@ Ce guide est conçu pour une utilisation quotidienne **sans aucune commande info
 
 ## 1. Ouvrir votre bureau de travail
 
-1. Lancez **VS Code** et ouvrez le dossier `math-ai-setup`.
-2. Si une petite fenêtre en bas à droite propose **« Rouvrir dans le conteneur »** (*Reopen in Container*), cliquez dessus (ou cliquez sur l'icône bleue `><` tout en bas à gauche → *Rouvrir dans le conteneur*).
-3. Tous vos outils (LaTeX, Lean 4, Python/SymPy, assistant IA) sont déjà installés à l'intérieur.
+> **Prérequis déjà en place sur votre ordinateur :** Docker Desktop doit être **lancé** (petite icône baleine visible dans la barre système Windows ou la barre de menus Mac), avec VS Code et l'extension *Dev Containers* installés.
+
+1. Vérifiez que **Docker Desktop** est démarré (sur Windows ou Mac, ouvrez l'application Docker Desktop si la petite baleine n'apparaît pas).
+2. Lancez **VS Code** et ouvrez le dossier `math-ai-setup`.
+3. Si une petite fenêtre en bas à droite propose **« Rouvrir dans le conteneur »** (*Reopen in Container*), cliquez dessus (ou cliquez sur l'icône bleue `><` tout en bas à gauche → *Rouvrir dans le conteneur*).
+4. Tous vos outils (LaTeX, Lean 4, Python/SymPy, assistant IA) sont déjà installés à l'intérieur. *(La toute première ouverture télécharge et prépare l'environnement : comptez plusieurs minutes ; les suivantes sont quasi instantanées.)*
 
 ---
 
@@ -45,6 +48,7 @@ Ouvrez le panneau de discussion IA sur le côté de VS Code, puis copiez l'une d
 
 | Symptôme | Solution immédiate |
 |---|---|
+| « Rouvrir dans le conteneur » échoue ou Docker ne répond pas | Vérifiez que **Docker Desktop** est bien démarré sur votre PC Windows ou Mac (petite baleine dans la barre système/menu), puis réessayez. |
 | L'assistant dit qu'il ne trouve pas `lean` ou `pdflatex` | Vous êtes hors du conteneur : cliquez sur `><` en bas à gauche → **Rouvrir dans le conteneur**. |
 | L'assistant demande de vous connecter (Copilot / Claude / Codex) | Ouvrez [`ANNEXE-LICENCES.md`](ANNEXE-LICENCES.md) section 3, ou demandez dans le chat : *« Aide-moi à reconnecter mon compte IA »*. |
 | Vous avez modifié un exemple et voulez repartir à zéro | Demandez dans le chat : *« Remets le dossier exemples à zéro »* (vos dossiers `recherches/`, `preuves/` et `enseignement/` ne seront pas touchés). |
