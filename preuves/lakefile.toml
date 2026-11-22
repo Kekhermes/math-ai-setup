@@ -4,3 +4,7 @@ defaultTargets = ["Preuves"]
 
 [[lean_lib]]
 name = "Preuves"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"

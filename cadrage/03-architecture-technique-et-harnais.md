@@ -60,12 +60,12 @@ Pour éviter toute divergence entre harnais, le dépôt maintient **une seule so
   - `"latex-workshop.view.pdf.viewer": "tab"`
   - `"chat.agentHost.claudeAgent.enabled": true`
 
-### 2.2 `.devcontainer/setup.sh` (corrections par rapport à `first-conv.md`)
+### 2.2 `.devcontainer/setup.sh` (corrections par rapport à `cadrage/archive/first-conv.md`)
 1. **Paquets système (`apt-get`) :**
    - `ripgrep curl git jq graphviz`
    - `texlive-latex-extra texlive-science texlive-bibtex-extra texlive-fonts-recommended texlive-lang-french latexmk biber` *(ajout de `texlive-lang-french` pour les cours et articles en français !)*
    - `poppler-utils pdf2svg` *(ajout indispensables pour `pdftoppm` — contrôle visuel TikZ et audit visuel de slides Beamer)*
-2. **Python via `uv` (correction du bug `uv tool install sympy` de `first-conv.md`) :**
+2. **Python via `uv` (correction du bug `uv tool install sympy` de `cadrage/archive/first-conv.md`) :**
    - Installer `uv` (`https://astral.sh/uv/install.sh`).
    - Créer un environnement virtuel projet `.venv` via `uv sync` à partir d'un `pyproject.toml` à la racine incluant : `sympy`, `numpy`, `scipy`, `matplotlib` (et `ipykernel` si besoin de scripts).
    - Installer les outils CLI indépendants via `uv tool install` : `leanblueprint` (et pré-chauffer `lean-lsp-mcp` et `arxiv-mcp-server` via `uv tool install` ou `uvx`).

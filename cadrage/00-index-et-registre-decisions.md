@@ -2,13 +2,13 @@
 
 > **Statut :** Livrable de cadrage complet (hors implémentation).
 > **Langue :** Français (cadrage et futur dépôt cible `math-ai-setup`).
-> **Source initiale conservée :** `../first-conv.md` (préservée sans modification).
+> **Source initiale conservée :** `archive/first-conv.md` (préservée sans modification).
 
 ---
 
 ## 1. Ordre de lecture recommandé
 
-1. **`00-index-et-registre-decisions.md`** (ce document) — Périmètre, décisions actées, écarts relevés dans `first-conv.md` et checklist de cohérence.
+1. **`00-index-et-registre-decisions.md`** (ce document) — Périmètre, décisions actées, écarts relevés dans `archive/first-conv.md` et checklist de cohérence.
 2. **`01-etat-de-l-art-open-source.md`** — Benchmark approfondi des solutions non commerciales existantes (Lean 4, recherche théorique, rédaction LaTeX, enseignement) et matrice de réutilisation.
 3. **`02-persona-ux-et-parcours.md`** — Profil du chercheur, frontière entre la session d'installation de Kevin et l'autonomie quotidienne, architecture du Hub multi-projets et garde-fous.
 4. **`03-architecture-technique-et-harnais.md`** — Stack DevContainer corrigée, VS Code Agent Host, stratégie multi-harnais agnostique, serveurs MCP, tâches 1-clic et rôles d'agents.
@@ -48,16 +48,16 @@
 
 ---
 
-## 4. Audit de `first-conv.md` : points validés vs écarts à corriger
+## 4. Audit de `archive/first-conv.md` : points validés vs écarts à corriger
 
-L'extrait initial `first-conv.md` pose une excellente base mais contient plusieurs affirmations à corriger ou nuancer avant implémentation :
+L'extrait initial `archive/first-conv.md` pose une excellente base mais contient plusieurs affirmations à corriger ou nuancer avant implémentation :
 
-| Élément de `first-conv.md` | Verdict après vérification | Correction retenue dans ce cadrage |
+| Élément de `archive/first-conv.md` | Verdict après vérification | Correction retenue dans ce cadrage |
 |---|---|---|
 | VS Code Agent Host (AHP 1.0) pilotant Copilot, Claude et Codex | **Validé** (l'architecture Agent Host et les adaptateurs Copilot/Claude/Codex existent dans VS Code). | Documenter les réglages exacts (`chat.agentHost.claudeAgent.enabled`, `chat.agentHost.codexAgent.enabled`) et noter que le routage Codex via Copilot exige **Copilot Pro+**, alors qu'un compte ChatGPT Plus/Pro/Edu fonctionne directement. |
 | `AGENTS.md` + liens symboliques `CLAUDE.md` et `.github/copilot-instructions.md` | **Validé et renforcé**. | Conserver `AGENTS.md` comme source unique + liens symboliques pour compatibilité CLI, et utiliser les emplacements de skills reconnus par VS Code (`chat.agentSkillsLocations` : `.github/skills/`, `.claude/skills/`, `.agents/skills/`). |
 | `lean-lsp-mcp` et `arxiv-mcp-server` via `uvx` | **Validé**. | `oOo0oOo/lean-lsp-mcp` (MIT) et `blazickjp/arxiv-mcp-server` (Apache 2.0) existent et fonctionnent via `uvx`. Ajouter une règle de sécurité contre l'injection de prompt dans les LaTeX/PDF externes téléchargés. |
 | `uv tool install sympy` dans `setup.sh` | **Erreur technique**. | `sympy` est une bibliothèque Python, pas un outil CLI : `uv tool install sympy` ne rend pas `sympy` importable dans les scripts du projet. Remplacer par un environnement virtuel `uv` dédié au workspace (`.venv` via `pyproject.toml` contenant `sympy`, `numpy`, `scipy`, `matplotlib`). |
-| Contrôle visuel TikZ via `pdftoppm -png` | **Dépendance manquante**. | `poppler-utils` (qui fournit `pdftoppm`) et `pdf2svg` manquent dans le `apt-get install` de `first-conv.md`. Les ajouter explicitement. |
-| Authentification des harnais dans un DevContainer | **Angle mort UX**. | `first-conv.md` ne traite pas la connexion interactive dans un conteneur sans navigateur direct (ex. `codex login --device-auth`, copie d'URL `claude auth login`, piège de `ANTHROPIC_API_KEY` qui court-circuite l'abonnement Pro/Max). Traité intégralement dans `06-annexe-licences-et-authentification.md`. |
+| Contrôle visuel TikZ via `pdftoppm -png` | **Dépendance manquante**. | `poppler-utils` (qui fournit `pdftoppm`) et `pdf2svg` manquent dans le `apt-get install` de `archive/first-conv.md`. Les ajouter explicitement. |
+| Authentification des harnais dans un DevContainer | **Angle mort UX**. | `archive/first-conv.md` ne traite pas la connexion interactive dans un conteneur sans navigateur direct (ex. `codex login --device-auth`, copie d'URL `claude auth login`, piège de `ANTHROPIC_API_KEY` qui court-circuite l'abonnement Pro/Max). Traité intégralement dans `06-annexe-licences-et-authentification.md`. |
 | Sécurité Git pour un non-informaticien | **Manquant**. | Un agent autonome peut exécuter des commandes Git destructrices (`git reset --hard`, `git clean -f`). Intégration de garde-fous Git à 3 niveaux inspirés de `lean4-skills`. |
