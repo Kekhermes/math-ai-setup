@@ -1,0 +1,37 @@
+{
+  "chat.useAgentSkills": true,
+  "chat.useAgentsMdFile": true,
+  "chat.useClaudeMdFile": true,
+  "chat.agentHost.claudeAgent.enabled": true,
+  "chat.agentSkillsLocations": {
+    ".github/skills": true,
+    ".claude/skills": true,
+    ".agents/skills": true,
+    "~/.copilot/skills": true,
+    "~/.claude/skills": true
+  },
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "math-ai-setup (latexmk / pdflatex)",
+      "tools": ["math-ai-latex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "math-ai-latex",
+      "command": "bash",
+      "args": [
+        "${workspaceFolder}/scripts/compiler-latex.sh",
+        "%DOCFILE%.tex"
+      ]
+    }
+  ],
+  "cSpell.language": "fr,en",
+  "files.exclude": {
+    "**/.lake": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  }
+}

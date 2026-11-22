@@ -1,0 +1,44 @@
+% Préambule mathématique commun — math-ai-setup
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{french.ldf}{\usepackage[french]{babel}}{}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\makeatletter
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
+\makeatother
+
+% Raccourcis ensemblistes classiques
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+
+% Marqueurs de rigueur inspirés de theorist-toolbox & Lean Blueprint
+\definecolor{alertOrange}{RGB}{194, 65, 12}
+\definecolor{alertBg}{RGB}{255, 247, 237}
+\definecolor{leanGreen}{RGB}{21, 128, 61}
+\definecolor{leanBg}{RGB}{240, 253, 244}
+
+\newcommand{\unproven}[1]{%
+  \par\medskip\noindent\fcolorbox{alertOrange}{alertBg}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
+      \textcolor{alertOrange}{\textbf{[À JUSTIFIER]}}~#1%
+    }%
+  }\par\medskip%
+}
+
+\newcommand{\leanproved}[1]{%
+  \textcolor{leanGreen}{\texttt{[Vérifié Lean: #1]}}%
+}
+
+\newcommand{\lean}[1]{}
+\newcommand{\leanok}{}

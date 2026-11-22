@@ -1,0 +1,36 @@
+\documentclass[aspectratio=169]{beamer}
+\input{cours-beamer}
+
+\title{Analyse L2 — Séance 1 : Suites numériques}
+\author{Département de Mathématiques}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Objectifs de la séance}
+  \begin{itemize}
+    \item Comprendre la notion de convergence d'une suite réelle.
+    \item Manipuler les majorations élémentaires.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Critère de Cauchy (pièges volontaires)}
+  % Piège 1 : utilise la notation \ell_C et \|u\|_\infty avant de les avoir définies
+  Si $(u_n)$ vérifie $\norm{u - \ell_C}_\infty < \varepsilon$, alors la somme tronquée s'écrit :
+  \[
+    S_{N,M}(u) = \sum_{k=N}^{M} u_k + \sum_{k=N}^{M} \alpha_k u_{k+1} + \sum_{k=N}^{M} \beta_k u_{k+2} + \sum_{k=N}^{M} \gamma_k u_{k+3} + \sum_{k=N}^{M} \delta_k u_{k+4} + \text{reste très long qui déborde du cadre Beamer}
+  \]
+\end{frame}
+
+\begin{frame}{Définition formelle de la convergence}
+  Une suite $(u_n)_{n \in \N}$ converge vers $\ell \in \R$ si :
+  \[
+    \forall \varepsilon > 0,\ \exists N \in \N,\ \forall n \ge N,\ \abs{u_n - \ell} \le \varepsilon.
+  \]
+\end{frame}
+
+\end{document}

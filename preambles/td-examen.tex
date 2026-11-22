@@ -1,0 +1,44 @@
+% Préambule pour TD et Examens avec corrigé masquable (\ifcorriges)
+\usepackage[margin=2.2cm]{geometry}
+\input{commun-maths}
+\usepackage{tcolorbox}
+\usepackage{comment}
+
+% Bascule sujet seul vs corrigé (pilotée par scripts/compiler-sujet-corrige.sh)
+\newif\ifcorriges
+\corrigesfalse
+\ifdefined\FORCERCORRIGES
+  \ifnum\FORCERCORRIGES=1
+    \corrigestrue
+  \else
+    \corrigesfalse
+  \fi
+\fi
+
+\theoremstyle{definition}
+\newtheorem{exercice}{Exercice}
+
+\definecolor{bleuCorrige}{RGB}{29, 78, 216}
+\definecolor{fondCorrige}{RGB}{239, 246, 255}
+
+\ifcorriges
+  \newenvironment{corrige}{%
+    \par\smallskip
+    \begin{tcolorbox}[colback=fondCorrige, colframe=bleuCorrige, title=\textbf{Corrigé}]
+  }{%
+    \end{tcolorbox}
+    \par\smallskip
+  }
+\else
+  \excludecomment{corrige}
+\fi
+
+\newcommand{\enteteTD}[2]{%
+  \noindent\textbf{\Large #1} \hfill \textit{#2}
+  \ifcorriges
+    \par\smallskip\noindent\textcolor{bleuCorrige}{\textbf{--- Version Enseignant (avec corrigés) ---}}
+  \else
+    \par\smallskip\noindent\textit{--- Sujet étudiant ---}
+  \fi
+  \par\medskip\hrule\bigskip
+}

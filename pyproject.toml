@@ -1,0 +1,11 @@
+[project]
+name = "math-ai-setup"
+version = "0.1.0"
+description = "Environnement Python de calcul symbolique et numérique pour le hub de recherche mathématique."
+requires-python = ">=3.11"
+dependencies = [
+  "sympy>=1.13",
+  "numpy>=2.0",
+  "scipy>=1.13",
+  "matplotlib>=3.9",
+]

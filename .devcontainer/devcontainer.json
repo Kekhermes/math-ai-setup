@@ -1,0 +1,52 @@
+{
+  "name": "Bureau de Recherche Mathématique (math-ai-setup)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "mounts": [
+    "source=math-elan-${devcontainerId},target=/home/vscode/.elan,type=volume",
+    "source=math-copilot-${devcontainerId},target=/home/vscode/.copilot,type=volume",
+    "source=math-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
+    "source=math-codex-${devcontainerId},target=/home/vscode/.codex,type=volume",
+    "source=math-uv-cache-${devcontainerId},target=/home/vscode/.cache/uv,type=volume"
+  ],
+  "remoteEnv": {
+    "PATH": "/home/vscode/.elan/bin:/home/vscode/.local/bin:${containerEnv:PATH}"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "chat.useAgentSkills": true,
+        "chat.useAgentsMdFile": true,
+        "chat.useClaudeMdFile": true,
+        "chat.agentHost.claudeAgent.enabled": true,
+        "chat.agentSkillsLocations": {
+          ".github/skills": true,
+          ".claude/skills": true,
+          ".agents/skills": true,
+          "~/.copilot/skills": true,
+          "~/.claude/skills": true
+        },
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.view.pdf.viewer": "tab",
+        "cSpell.language": "fr,en"
+      },
+      "extensions": [
+        "leanprover.lean4",
+        "James-Yu.latex-workshop",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-french"
+      ]
+    }
+  }
+}

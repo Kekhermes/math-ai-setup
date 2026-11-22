@@ -1,0 +1,32 @@
+# Environnements et caches locaux
+.venv/
+.cache/
+__pycache__/
+*.pyc
+**/.lake/
+build/
+
+# Fichiers temporaires LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Rapports visuels temporaires
+.audit-visuel/
+
+# Secrets locaux éventuels (ne jamais commiter de clés API)
+.env
+.env.local
+*.key

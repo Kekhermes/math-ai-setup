@@ -1,0 +1,30 @@
+\documentclass[11pt,a4paper]{article}
+\input{td-examen}
+
+\begin{document}
+\enteteTD{TD n\textsuperscript{o} 1 — Suites et inégalités}{Licence 2 Mathématiques}
+
+\begin{exercice}[Échauffement — Moyenne arithmético-géométrique]
+Soient $a, b \in \R$ avec $a \ge 0$ et $b \ge 0$. Montrer que :
+\[
+  \sqrt{ab} \le \frac{a + b}{2}.
+\]
+\end{exercice}
+
+\begin{corrige}
+On calcule $(a + b)^2 - 4ab = (a - b)^2 \ge 0$, d'où $4ab \le (a + b)^2$. Comme $a + b \ge 0$ et $ab \ge 0$, la croissance de la fonction racine carrée donne $\sqrt{ab} \le \frac{a+b}{2}$.
+\end{corrige}
+
+\begin{exercice}[Application directe — Suite bornée]
+Soit $(u_n)_{n \ge 1}$ définie par $u_n = \frac{n + (-1)^n}{n}$. Montrer que pour tout $n \ge 1$, on a $0 \le u_n \le 2$, puis déterminer $\lim_{n \to +\infty} u_n$.
+\end{exercice}
+
+\begin{corrige}
+Pour tout $n \ge 1$, $-1 \le (-1)^n \le 1$, donc $n - 1 \le n + (-1)^n \le n + 1$. Comme $n > 0$ :
+\[
+  0 \le 1 - \frac{1}{n} \le u_n \le 1 + \frac{1}{n} \le 2.
+\]
+Par encadrement, $\lim_{n \to +\infty} u_n = 1$.
+\end{corrige}
+
+\end{document}

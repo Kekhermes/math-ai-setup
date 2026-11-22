@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Vérifier mon installation (Diagnostic)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/valider-setup.sh"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "2. Compiler le document LaTeX actif (PDF)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/compiler-latex.sh", "${file}"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": "$latex"
+    },
+    {
+      "label": "3. Compiler TD/Examen : Sujet seul + Corrigé",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/compiler-sujet-corrige.sh", "${file}"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "4. Vérifier toutes les preuves Lean (lake build)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/verifier-lean.sh"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "5. Générer le Blueprint Lean",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/generer-blueprint.sh"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "6. Sauvegarder mon travail sur GitHub (commit + push guidé)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/sauvegarder-git.sh"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
