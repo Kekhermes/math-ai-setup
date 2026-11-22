@@ -2,6 +2,15 @@
 
 Bienvenue dans votre espace de travail tout-en-un pour la **recherche mathématique**, la **preuve formelle en Lean 4**, la **rédaction LaTeX (articles & subventions)**, la **bibliographie arXiv** et l'**enseignement (Beamer, TD & examens)**.
 
+> **🆘 Vous êtes perdu·e ou bloqué·e ? Utilisez le skill d'aide `helper-chercheur` :**
+> 1. Ouvrez le panneau **Chat** dans VS Code (icône bulle en haut de la fenêtre, ou `Ctrl+Alt+I` sur Windows / `⌃⌘I` sur Mac).
+> 2. Tapez simplement `/helper-chercheur` (ou parlez-lui normalement en français) suivi de votre problème, par exemple :
+>    - `« /helper-chercheur Je débute, vérifie mon installation et montre-moi quoi faire. »`
+>    - `« /helper-chercheur Je suis bloqué sur cette erreur : [collez le message]. »`
+>    - `« /helper-chercheur Je veux sauvegarder mon travail sur GitHub sans rien casser. »`
+>
+> *(Si vous utilisez OpenAI Codex, tapez `$helper-chercheur` ou demandez simplement : « Utilise le skill helper-chercheur pour m'aider ».)*
+
 ## Prérequis sur la machine (Windows ou macOS)
 
 > Pour le chercheur : cette installation est réalisée **une seule fois** lors de la session de mise en place initiale ; au quotidien, rien d'autre n'est à installer.

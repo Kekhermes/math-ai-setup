@@ -2,6 +2,14 @@
 
 Ce guide est conçu pour une utilisation quotidienne **sans aucune commande informatique à mémoriser**.
 
+> **🆘 Réflexe n° 1 en cas de blocage : appelez le skill `helper-chercheur`**
+> Dès qu'un message d'erreur vous semble obscur ou que vous ne savez plus quel bouton cliquer, ouvrez le **Chat VS Code** (`Ctrl+Alt+I` sur Windows / `⌃⌘I` sur Mac) et tapez :
+> ```text
+> /helper-chercheur Je suis bloqué : [décrivez votre problème ou collez l'erreur ici]
+> ```
+> *(Sans slash, ça fonctionne aussi en français naturel ; sous Codex, utilisez `$helper-chercheur`.)*
+> Détails complets en **section 3** ci-dessous.
+
 ---
 
 ## 1. Ouvrir votre bureau de travail
@@ -28,23 +36,45 @@ Ce guide est conçu pour une utilisation quotidienne **sans aucune commande info
 
 ---
 
-## 3. Que taper dans le chat la première fois ?
+## 3. En cas de blocage : marche à suivre pas-à-pas avec le skill d'aide (`helper-chercheur`)
 
-Ouvrez le panneau de discussion IA sur le côté de VS Code, puis copiez l'une de ces 4 phrases :
+Votre espace intègre un **assistant pédagogique dédié (`helper-chercheur`)** conçu pour les mathématiciens peu familiers avec l'informatique. Il diagnostique l'installation, traduit les erreurs en français simple et vous propose au maximum 2 ou 3 actions claires sans rien casser.
 
-1. **Pour vérifier et découvrir l'espace :**
-   > `Bonjour, je débute avec cet espace. Vérifie mon installation et montre-moi par où commencer.`
-2. **Pour découvrir Lean 4 depuis zéro (10 min) :**
-   > `Je n'ai jamais utilisé Lean 4. Lance le mode tuteur sur exemples/00-initiation-lean/BacASableLean.lean sans me donner les réponses tout de suite.`
-3. **Pour démarrer un vrai travail :**
-   > `Je veux commencer un nouvel article de recherche sur [sujet] dans recherches/. Prépare le dossier.`
-   > *(ou pour un cours :)* `Je veux préparer un nouveau cours et une fiche de TD avec corrigé masquable sur [sujet] dans enseignement/.`
-4. **En cas de blocage ou de message d'erreur incompréhensible :**
-   > `Je suis bloqué sur ce message : [coller le message]. Explique-moi simplement ce qui se passe et comment le corriger.`
+### Comment l'appeler (en 3 étapes)
+1. **Ouvrez le panneau Chat dans VS Code :** cliquez sur l'icône de discussion en haut de la barre VS Code (ou appuyez sur `Ctrl+Alt+I` sous Windows/Linux, `⌃⌘I` sous Mac).
+2. **Appelez explicitement le skill** *(ou écrivez en français naturel)* :
+   - Avec **GitHub Copilot** ou **Claude Code** : commencez votre message par **`/helper-chercheur`**.
+   - Avec **OpenAI Codex** : commencez par **`$helper-chercheur`**.
+   - Ou écrivez simplement : *« Aide-moi, je suis bloqué... »*.
+3. **Copiez-collez l'une des demandes prêtes à l'emploi ci-dessous :**
+
+| Votre situation | Message prêt à copier dans le Chat |
+|---|---|
+| **Je débute / vérifier que tout marche** | `/helper-chercheur Bonjour, je débute. Vérifie mon installation et explique-moi par où commencer.` |
+| **J'ai une erreur rouge (LaTeX, Lean, Git, VS Code)** | `/helper-chercheur Je suis bloqué sur ce message : [coller l'erreur]. Explique-moi simplement quoi faire.` |
+| **Je ne sais pas quel bouton ou dossier utiliser** | `/helper-chercheur Je veux [écrire un article / préparer un TD / tester une conjecture]. Guide-moi étape par étape.` |
+| **Je veux apprendre Lean 4 sans qu'on fasse à ma place** | `/tuteur-lean Je n'ai jamais fait de Lean. Guide-moi sur exemples/00-initiation-lean/BacASableLean.lean sans donner la réponse.` |
+| **Je veux sauvegarder sans risque de tout perdre** | `/helper-chercheur Aide-moi à sauvegarder mon travail sur GitHub en toute sécurité.` |
+
+> **Et si même le Chat ne répond pas ?** C'est presque toujours soit Docker Desktop fermé, soit une reconnexion de compte IA nécessaire : regardez le tableau de dépannage express en **section 5** ou ouvrez [`ANNEXE-LICENCES.md`](ANNEXE-LICENCES.md).
 
 ---
 
-## 4. Dépannage express
+## 4. Que taper dans le chat pour travailler au quotidien ?
+
+Ouvrez le panneau de discussion IA sur le côté de VS Code, puis copiez l'une de ces phrases :
+
+1. **Pour démarrer un vrai travail :**
+   > `Je veux commencer un nouvel article de recherche sur [sujet] dans recherches/. Prépare le dossier.`
+   > *(ou pour un cours :)* `Je veux préparer un nouveau cours et une fiche de TD avec corrigé masquable sur [sujet] dans enseignement/.`
+2. **Pour tester une conjecture avant de la formaliser en Lean :**
+   > `Teste cette conjecture avec Python/SymPy avant qu'on passe à Lean : [énoncé].`
+3. **Pour découvrir pas-à-pas les exemples guidés :**
+   > `Guide-moi pour démarrer l'exercice exemples/01-preuve-lean-et-sympy/.`
+
+---
+
+## 5. Dépannage express (si le Chat lui-même est bloqué)
 
 | Symptôme | Solution immédiate |
 |---|---|

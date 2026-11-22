@@ -26,9 +26,9 @@ Pour éviter au chercheur de devoir créer un dépôt GitHub et reconstruire un 
 ```text
 math-ai-setup/                     # Dépôt Git privé unique du chercheur
 ├── .devcontainer/                 # Environnement complet (Lean 4, Mathlib, TeX Live, Python, Node, MCP)
+├── .mcp.json                      # Ponts MCP portables (lean-lsp-mcp & arxiv-mcp-server)
 ├── .vscode/
 │   ├── tasks.json                 # Boutons 1-clic (Compiler PDF, Vérifier Lean, Sauvegarder, Diagnostic)
-│   ├── mcp.json                   # Ponts lean-lsp-mcp & arxiv-mcp-server
 │   └── settings.json              # Réglages pédagogiques (auto-build LaTeX, Agent Skills activés)
 ├── .github/skills/                # Source canonique des skills (liée vers .claude/skills & .agents/skills)
 ├── AGENTS.md                      # Règles d'or unifiées (+ liens CLAUDE.md, .github/copilot-instructions.md)

@@ -3,6 +3,7 @@
   "chat.useAgentsMdFile": true,
   "chat.useClaudeMdFile": true,
   "chat.agentHost.claudeAgent.enabled": true,
+  "chat.mcp.workspaceRootConfig.enabled": true,
   "chat.agentSkillsLocations": {
     ".github/skills": true,
     ".claude/skills": true,

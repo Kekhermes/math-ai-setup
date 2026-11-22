@@ -80,20 +80,24 @@ Pour éviter toute divergence entre harnais, le dépôt maintient **une seule so
 
 ---
 
-## 3. Serveurs MCP configurés (`.vscode/mcp.json`)
+## 3. Serveurs MCP configurés (`.mcp.json` à la racine)
+
+Format portable natif du runtime Agent Host Copilot et de Claude Code (remplace l'ancien `.vscode/mcp.json` déprécié) :
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "lean-lsp": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["lean-lsp-mcp"]
+      "args": ["lean-lsp-mcp"],
+      "tools": ["*"]
     },
     "arxiv": {
       "type": "stdio",
-      "command": "uvx",
-      "args": ["arxiv-mcp-server", "--storage-path", "/workspaces/math-ai-setup/.cache/arxiv-papers"]
+      "command": "bash",
+      "args": ["scripts/run-arxiv-mcp.sh"],
+      "tools": ["*"]
     }
   }
 }
